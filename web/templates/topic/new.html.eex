@@ -12,6 +12,7 @@
         class: "appearance-none bg-transparent border-none w-full text-gray-700 py-1 px-2 leading-tight focus:outline-none",
         placeholder: "Enter a topic"
       ) %>
+      <%= error_tag form, :title %>
     </div>
 
     <%= submit "Save", class: "bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded" %>
