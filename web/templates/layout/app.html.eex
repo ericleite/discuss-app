@@ -23,6 +23,7 @@
         </div>
       </div>
     </div>
+
     <div class="max-w-screen-lg mx-auto">
       <div class="py-6 px-8">
         <nav class="flex items-center h-10 justify-start">
@@ -40,6 +41,7 @@
         <%= render @view_module, @view_template, assigns %>
       </main>
     </div>
+
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
   </body>
 </html>
