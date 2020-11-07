@@ -6,21 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-
     <title>Hello Discuss!</title>
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
     <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
   </head>
-
   <body>
     <div class="max-w-screen-lg mx-auto">
       <div class="py-6 px-8">
         <nav class="flex items-center h-10 justify-start">
           <div class="flex items-center flex-shrink-0 flex-grow-0">
             <div class="flex items-center justify-between w-auto">
-              <a href="#" aria-label="Home">
-                <img class="w-auto h-10" src="https://tailwindui.com/img/logos/workflow-mark-on-white.svg" alt="Logo">
-              </a>
+              <a href="#" aria-label="Home">Home</a>
             </div>
           </div>
           <div class="block ml-10 pr-4">
@@ -29,12 +25,10 @@
           </div>
         </nav>
       </div>
-
       <main role="main" class="max-w-screen-lg mx-auto mt-20 px-8">
         <%= render @view_module, @view_template, assigns %>
       </main>
     </div>
-
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
   </body>
 </html>
