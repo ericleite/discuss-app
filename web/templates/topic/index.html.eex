@@ -1,8 +1,12 @@
 <h2 class="text-6xl tracking-tight leading-none font-extrabold text-gray-900">
   Topics
 </h2>
-<ul>
+<ul class="mt-8">
   <%= for topic <- @topics do %>
-    <li><%= topic.title %></li>
+    <li>
+      <a class="block text-2xl text-indigo-600 hover:text-indigo-900" href="#">
+        <div class="py-4"><%= topic.title %></div>
+      </a>
+    </li>
   <% end %>
 </ul>
