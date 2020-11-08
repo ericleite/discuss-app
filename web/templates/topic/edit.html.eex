@@ -1,15 +1,14 @@
 <h3 class="mb-12 text-5xl leading-10 font-extrabold tracking-tight text-gray-900">
-  Create a new topic
+  Edit topic
 </h3>
 
-<%= form_for @changeset, topic_path(@conn, :create), fn form -> %>
+<%= form_for @changeset, topic_path(@conn, :update, @topic), fn form -> %>
   <div class="space-y-8">
     <div class="flex items-center border-b border-indigo-500 py-2">
       <%= text_input(
         form,
         :title,
         class: "appearance-none bg-transparent border-none w-full text-gray-700 py-1 px-2 leading-tight focus:outline-none",
-        placeholder: "Enter a topic"
       ) %>
       <%= error_tag form, :title %>
     </div>
