@@ -22,7 +22,7 @@ defmodule Discuss.Router do
     # get("/topics/new", TopicController, :new)
     # post("/topics", TopicController, :create)
     # put("/topics/:id", TopicController, :update)
-    resources "/", TopicController
+    resources("/", TopicController)
   end
 
   # Other scopes may use custom stacks.
