@@ -24,7 +24,9 @@ defmodule Discuss.TopicController do
         |> redirect(to: topic_path(conn, :index))
 
       {:error, changeset} ->
-        render(conn, "new.html", changeset: changeset)
+        conn
+        |> put_flash(:error, "Something went wrong!")
+        |> render("new.html", changeset: changeset)
     end
   end
 
@@ -35,7 +37,10 @@ defmodule Discuss.TopicController do
   end
 
   def update(conn, %{"id" => id, "topic" => topic}) do
-    changeset = Topic |> Repo.get(id) |> Topic.changeset(topic)
+    old_topic = Repo.get(Topic, id)
+    changeset = Topic.changeset(old_topic, topic)
+
+    IO.inspect(changeset)
 
     case Repo.update(changeset) do
       {:ok, _topic} ->
@@ -44,7 +49,9 @@ defmodule Discuss.TopicController do
         |> redirect(to: topic_path(conn, :index))
 
       {:error, changset} ->
-        render(conn, "edit.html", changeset: changeset)
+        conn
+        |> put_flash(:error, "Something went wrong!")
+        |> render("edit.html", changeset: changeset, topic: old_topic)
     end
   end
 end

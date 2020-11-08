@@ -5,8 +5,8 @@
 <ul class="space-y-4">
   <%= for topic <- @topics do %>
     <li class="border border-indigo-600 overflow-hidden rounded">
-      <div class="flex justify-between p-4">
-        <%= link topic.title, to: topic_path(@conn, :index), class: "text-2xl text-indigo-600 hover:text-indigo-900 transition duration-150 ease-in-out" %>
+      <div class="flex justify-between items-center p-4">
+        <%= link topic.title, to: topic_path(@conn, :index), class: "text-xl text-indigo-600 hover:text-indigo-900 transition duration-150 ease-in-out" %>
         <a
           href="<%= topic_path(@conn, :edit, topic) %>"
           class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded">
